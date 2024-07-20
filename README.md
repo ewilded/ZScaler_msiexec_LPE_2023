@@ -1,6 +1,6 @@
 This is my proof of concept for the Local Privilege Escalation via MSI installer (DLL hijacking race condition) in ZScaler Client Connect, version 3.7.2.18 (Windows).
 
-The issue was addressed by the vendor in the late 2023 without a CVE, in the meantime Microsoft has introduced a change in the way environmental variables are handled by msiexec processes running as SYSTEM (forced the TEMP value to be C:\Windows\SystemTemp, which is not accessible to regular users), effectively killing a significant number of msiexec-based LPEs such as this one.
+The issue was addressed by the vendor in late 2023 without a CVE, in the meantime Microsoft has introduced a change in the way environmental variables are handled by msiexec processes running as SYSTEM (forced the TEMP value to be C:\Windows\SystemTemp, which is not accessible to regular users), effectively killing a significant number of msiexec-based LPEs such as this one.
 
 Publishing this for educational purposes.
 
