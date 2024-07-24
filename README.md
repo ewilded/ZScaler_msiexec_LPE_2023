@@ -22,7 +22,7 @@ The exploit is very simple - it attempts to overwrite the first known file as so
 Successful exploitation requires multiple attempts (it is very unlikely that the race condition will be won at the right time in first attempt). With the version I have attached, I had to perform about 5 attempts until I hit the right time window.
 
 To perform exploitation, the POC executable had to be in the same directory as the DLL we wanted to inject. It expects the DLL to be under "raw.dll" name.
-The exploit needs to be run, then any key needs to be hit and approved with "Enter" for it to start watching for the temporary directory to be created. Then we need to manually run "msiexec.exe /fa PATH_TO_INSTALLER_FILE.msi". The MSI file must match the one the current version was installed from (can be the one from C:\Windows\Installer directory).
+We run it manually, providing the path to the MSI file as the only argument, like this: "ZScaler_LPE.exe PATH_TO_INSTALLER_FILE.msi". The MSI file must match the one the current version was installed from (can be the one from C:\Windows\Installer directory).
 
 Remember, this will not work on recent versions of ZScaler Client Connect, neither on recent versions of Windows.
 
